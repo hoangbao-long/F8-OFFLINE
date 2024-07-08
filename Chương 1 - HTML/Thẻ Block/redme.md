@@ -1,0 +1,1 @@
+- Thẻ <div> là thẻ Nonsemantic (không ngữ nghĩa) được dùng để phân chia khu vực, hoặc nhóm các thẻ và chia thành từng khối, từng cột để sau này chúng ta xử dụng để CSS hoặc làm cái gì khác. Thẻ <div> sẽ không làm thay đổi định dạng của các thẻ khác. Thường từ 2 thẻ trở lên sẽ nhóm lại.
