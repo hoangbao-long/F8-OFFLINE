@@ -14,3 +14,5 @@ Scheme + domain + ext:port/path?querystring#fargment
    d. http://tenmien/duong-dan (tương đối)
    e. //tenmien/duong-dan (tuyệt đối)
    f. tenmien/duong-dan (tương đối)
+
+# Thẻ a có thể bọc được các thẻ block khác (ngoại lệ)
