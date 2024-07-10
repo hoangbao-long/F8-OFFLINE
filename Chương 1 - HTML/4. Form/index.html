@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biểu mẫu Form</title>
+  </head>
+  <body>
+    <form
+      method="post"
+      action="https://api-gateway.fullstack.edu.vn/action_page.php"
+    >
+      <!-- Ô nhập liệu thường gọi là các trường - ô nhập liệu -->
+      <input type="text" name="fullname" />
+      <button>Submit</button>
+    </form>
+    <!-- ví dụ 2 -->
+    <form action="">
+      <div>
+        <label for="name">Họ Và Tên</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Họ tên ..."
+          id="name"
+          value="Long"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email ..."
+          value=""
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder=""
+          value=""
+          required
+        />
+      </div>
+      <div>
+        <label for="age">Tuổi</label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Tuổi"
+          min="18"
+          max="50"
+          step="1"
+          required
+        />
+      </div>
+      <div>
+        <label for="avatar">Avatar</label>
+        <input type="file" name="avatar" id="avatar" multiple />
+      </div>
+      <div>
+        <label for="search">Tìm kiếm</label>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Tìm kiếm ..."
+        />
+      </div>
+      <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <div>
+        <label>Giới tính</label>
+        <label> <input type="radio" name="gender" value="nam" />Nam </label>
+        <label> <input type="radio" name="gender" value="nu" />Nữ </label>
+        <label> <input type="radio" name="gender" value="bede" />Bê đê </label>
+      </div>
+      <div>
+        <label>Sở thích</label>
+        <label>
+          <input type="checkbox" name="hobby" value="football" />Đá Bóng
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="bongchuyen" />Bóng
+          chuyền</label
+        >
+        <label>
+          <input type="checkbox" name="hobby" value="caulong" checked />Cầu lông
+        </label>
+      </div>
+      <div>
+        <label for="messenger">Tin nhắn</label>
+        <textarea
+          name="messenger"
+          id="messenger"
+          placeholder="Nhập tin nhắn..."
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <div>
+        <label for="provins">Tỉnh/Thành Phố</label>
+        <label>
+          <select name="provins" id="provins">
+            <option value="0">Chọn Tỉnh Thành Phố</option>
+            <option value="1">Hà Nội</option>
+            <option value="2">Thanh Hóa</option>
+            <option value="3">Hà Nam</option>
+            <!-- selected chọn mặc định -->
+          </select>
+        </label>
+      </div>
+      <div>
+        <label for="provin">Tỉnh/Thành Phố</label>
+        <label>
+          <select name="provin" id="provin">
+            <option value="0">Chọn Tỉnh Thành Phố</option>
+            <optgroup label="Miền Bắc">
+              <option value="1">Hà Nội</option>
+              <option value="2">Thanh Hóa</option>
+              <option value="3">Hà Nam</option>
+            </optgroup>
+            <optgroup label="Miền Nam">
+              <option value="1">Đà Nẵng</option>
+              <option value="2">Nghệ An</option>
+              <option value="3">Quảng Nam</option>
+            </optgroup>
+            <!-- selected chọn mặc định -->
+          </select>
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+      <!-- Mặc định button có type= submit, button, reset -->
+    </form>
+  </body>
+</html>
