@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 input {
     display: inline-block;
     width: 90%;
@@ -24,4 +25,18 @@ select {
     padding: 5px 0px;
     border: none;
     cursor: pointer;
+}
+.container {
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    width: 450px;
+    height: auto;
+    background-color: #d3d3d3;
+    margin: 30px auto;
+}
+table {
+    margin-left: 10px;
+}
+p {
+    width: 450px;
 }
