@@ -1,29 +1,237 @@
 * {
     margin: 0;
     padding: 0;
+    outline: 0;
     box-sizing: border-box;
-}
-
-a {
+  }
+  
+  :root {
+    --shine-degree: 120deg;
+    --shine-color: rgba(255, 255, 255, 0.4);
+    --shine-effect: linear-gradient(
+      var(--shine-degree),
+      transparent,
+      var(--shine-color),
+      transparent
+    );
+  }
+  
+  html::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+  html::-webkit-scrollbar-track {
+    background: #fefefe;
+    /* Đây là màu nền */
+  }
+  html::-webkit-scrollbar-thumb {
+    background: #056aa4;
+    /* Đây là màu của cái tròn tròn */
+    border-radius: 5rem;
+  }
+  
+  a {
     text-decoration: none;
-}
-
-.homework-container {
-    margin: 20px 30px;
-    line-height: 30px;
-}
-.day-homework {
-    
-}
-h1 {
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    min-width: 100vh;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 0;
+    background-color: #fff;
+    z-index: 99;
+  }
+  
+  .header-container {
     display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    color: #056aa4;
+  }
+  
+  .user-name,
+  .title-header {
+    font-weight: 600;
+  }
+  
+  .main {
+    background-color: #a9c9ff;
+    background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+    margin-top: 46px;
+  }
+  
+  .container {
+    /* width: 600px; */
+    margin: 0 auto;
+    padding: 16px 0;
+  }
+  
+  .project-container,
+  .homework-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid rgb(0, 110, 255);
-    background-color: rgb(17, 0, 255);
-    border-radius: 3px;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  
+  .title {
+    position: relative;
+    width: 800px;
+    text-align: center;
+    font-size: 30px;
+    background-color: #f86f03;
+    border-radius: 12px;
+    color: #fff6f4;
+    padding: 4px 0;
+    margin: 0 auto;
+    cursor: pointer;
+    /* background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(237, 3, 32, 0.87) 20.8%,
+      rgba(242, 121, 1, 0.84) 74.4%
+    ); */
+    background: linear-gradient(90deg, #0086ef, #551aae);
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .title:hover {
+    opacity: 0.8;
+  }
+  
+  .title i {
+    padding-left: 16px;
+  }
+  
+  .title-prj {
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  }
+  
+  .title-js {
+    background-color: #f8da3c;
+  
+    background: linear-gradient(270deg, #fe3b0e, #ff8119);
+  }
+  
+  .title-react {
+    background: #ffb75e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #ed8f03,
+      #ffb75e
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #ed8f03,
+      #ffb75e
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    color: #056aa4;
+  }
+  
+  .project-item,
+  .day-homework {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  }
+  
+  .day-title {
+    font-size: 20px;
+    color: blue;
+    word-spacing: 4px;
+    text-align: center;
+  }
+  
+  .project-item a,
+  .day-homework a {
+    display: block;
+    margin: 8px 0;
+    color: #4942e4;
+    font-weight: 500;
+  }
+  
+  .project-item a:hover,
+  .day-homework a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    height: 46px;
+  }
+  
+  .desc {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+  .project-wrapper,
+  .homework-wrapper {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  input[id="title-wrap-prj"]:checked ~ .project-wrapper,
+  input[id="title-wrap-js"]:checked ~ .homework-wrapper,
+  input[id="title-wrap-react"]:checked ~ .homework-wrapper,
+  input[id="title-wrap"]:checked ~ .homework-wrapper {
+    opacity: 1;
+    display: block;
+  }
+  
+  .title-desc {
+    font-size: 16px;
     color: #fff;
-}
-
-
-
-
+    text-align: center;
+    background-color: #74ebd5;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  
+    padding: 6px;
+    border-radius: 8px;
+  }
+  
+  .title-wrap {
+    position: relative;
+  }
+  
+  .btn-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shine-effect);
+    animation: shine 3s ease-in-out infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+      transition-property: left;
+    }
+    56%,
+    100% {
+      left: 100%;
+      transition-property: left;
+    }
+  }
