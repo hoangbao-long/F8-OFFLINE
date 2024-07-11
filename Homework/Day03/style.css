@@ -5,22 +5,23 @@
 }
 input {
     display: inline-block;
-    width: 100%;
+    width: 90%;
     margin: 7px 0px;
     padding: 3px 0px;
 }
 select {
     margin: 7px 0px;
-    width: 100%;
+    width: 90%;
     padding: 3px 0px;
 }
 .send-me {
     display: inline-block;
-    width: 100%;
+    width: 95%;
     text-align: center;
     background-color: forestgreen;
     color: #fff;
     margin: 7px 0px;
     padding: 5px 0px;
     border: none;
+    cursor: pointer;
 }
