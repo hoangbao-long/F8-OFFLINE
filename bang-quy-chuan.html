@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi DN sang Ø</title>
+    <style>
+      /* body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      } */
+      .container {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .fields {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .dfield {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .cff-spinner-components-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+      }
+      .cff-spinner-components-container button {
+        width: 30px;
+        height: 35px;
+        background-color: #3ad2dd;
+        color: white;
+        border: none;
+        border-radius: 10%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 0 5px;
+      }
+      .cff-spinner-components-container button:hover {
+        background-color: #0056b3;
+      }
+      .cff-spinner-components-container select {
+        width: 100px;
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        font-size: 16px;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+      }
+      .cff-spinner-components-container select:focus {
+        outline: none;
+        border-color: #007bff;
+        background-color: #fff;
+      }
+      .fields label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+      }
+      .fields input[type="text"] {
+        width: 100px;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        background-color: #f2f2f2;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="fields cff-spinner fieldname1_1 cff-number-field"
+        id="field_1-0"
+      >
+        <label for="fieldname1_1"
+          >Chọn kích thước DN cần chuyển đổi sang Ø (phi):</label
+        >
+        <div class="dfield">
+          <div class="cff-spinner-components-container medium">
+            <button type="button" class="cff-spinner-down">-</button>
+            <select
+              aria-label="Chọn số DN cần chuyển đổi sang Ø:"
+              id="fieldname1_1"
+              name="fieldname1_1"
+              class="field number large valid"
+            >
+              <!-- Thêm các tùy chọn tại đây -->
+              <option value="15">DN15</option>
+              <option value="20">DN20</option>
+              <option value="25">DN25</option>
+              <option value="32">DN32</option>
+              <option value="40">DN40</option>
+              <option value="50">DN50</option>
+            </select>
+            <button type="button" class="cff-spinner-up">+</button>
+          </div>
+          <span class="uh"></span>
+        </div>
+        <div class="clearer"></div>
+      </div>
+      <div class="fields fieldname2_1 cff-calculated-field" id="field_1-1">
+        <label for="fieldname2_1">Kích thước Ø (phi) được quy đổi từ DN:</label>
+        <div class="dfield">
+          <input
+            aria-label="Số Ø được quy đổi từ DN:"
+            id="fieldname2_1"
+            name="fieldname2_1"
+            readonly=""
+            class="codepeoplecalculatedfield field medium valid"
+            type="text"
+            value=""
+            dep=""
+            notdep=""
+            aria-invalid="false"
+          />
+          <span class="uh"></span>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const spinnerDown = document.querySelector(".cff-spinner-down");
+        const spinnerUp = document.querySelector(".cff-spinner-up");
+        const selectField = document.getElementById("fieldname1_1");
+        const outputField = document.getElementById("fieldname2_1");
+
+        spinnerDown.addEventListener("click", function () {
+          const selectedIndex = selectField.selectedIndex;
+          if (selectedIndex > 0) {
+            selectField.selectedIndex = selectedIndex - 1;
+            updateOutput();
+          }
+        });
+
+        spinnerUp.addEventListener("click", function () {
+          const selectedIndex = selectField.selectedIndex;
+          if (selectedIndex < selectField.options.length - 1) {
+            selectField.selectedIndex = selectedIndex + 1;
+            updateOutput();
+          }
+        });
+
+        selectField.addEventListener("change", updateOutput);
+
+        function updateOutput() {
+          const fahrenheit = parseFloat(selectField.value);
+          let result;
+          switch (fahrenheit) {
+            case 15:
+              result = 21;
+              break;
+            case 20:
+              result = 27;
+              break;
+            case 25:
+              result = 34;
+              break;
+            case 32:
+              result = 42;
+              break;
+            case 40:
+              result = 49;
+              break;
+            case 50:
+              result = 60;
+              break;
+          }
+          outputField.value = result.toFixed(0) + " mm";
+        }
+        updateOutput();
+      });
+    </script>
+  </body>
+</html>

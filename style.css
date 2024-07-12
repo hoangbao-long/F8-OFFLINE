@@ -36,7 +36,7 @@
   body {
     font-family: "Poppins", sans-serif;
     width: 100%;
-    min-width: 100vh;
+    /* min-width: 100vh; */
   }
   
   .header {
