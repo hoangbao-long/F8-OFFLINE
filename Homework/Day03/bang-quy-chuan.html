@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chuyển đổi DN sang Ø</title>
     <style>
-      /* body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-      } */
-      .container {
-        max-width: 500px;
+      .container-phi {
+        max-width: 100%;
         margin: auto;
         padding: 20px;
         background-color: #fff;
@@ -39,8 +33,6 @@
         margin: 0 10px;
       }
       .cff-spinner-components-container button {
-        width: 30px;
-        height: 35px;
         background-color: #3ad2dd;
         color: white;
         border: none;
@@ -54,6 +46,7 @@
       }
       .cff-spinner-components-container select {
         width: 100px;
+        height: auto;
         text-align: center;
         padding: 8px;
         border: 1px solid #ccc;
@@ -61,6 +54,7 @@
         background-color: #f2f2f2;
         font-size: 16px;
         transition: border-color 0.3s ease, background-color 0.3s ease;
+        z-index: 999;
       }
       .cff-spinner-components-container select:focus {
         outline: none;
@@ -86,7 +80,7 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container-phi">
       <div
         class="fields cff-spinner fieldname1_1 cff-number-field"
         id="field_1-0"
@@ -104,12 +98,27 @@
               class="field number large valid"
             >
               <!-- Thêm các tùy chọn tại đây -->
+              <option value="08">DN08</option>
+              <option value="10">DN10</option>
               <option value="15">DN15</option>
               <option value="20">DN20</option>
               <option value="25">DN25</option>
               <option value="32">DN32</option>
               <option value="40">DN40</option>
               <option value="50">DN50</option>
+              <option value="65">DN65</option>
+              <option value="80">DN80</option>
+              <option value="100">DN100</option>
+              <option value="125">DN125</option>
+              <option value="150">DN150</option>
+              <option value="200">DN200</option>
+              <option value="250">DN250</option>
+              <option value="300">DN300</option>
+              <option value="350">DN350</option>
+              <option value="400">DN400</option>
+              <option value="450">DN450</option>
+              <option value="500">DN500</option>
+              <option value="600">DN600</option>
             </select>
             <button type="button" class="cff-spinner-up">+</button>
           </div>
@@ -118,7 +127,9 @@
         <div class="clearer"></div>
       </div>
       <div class="fields fieldname2_1 cff-calculated-field" id="field_1-1">
-        <label for="fieldname2_1">Kích thước Ø (phi) được quy đổi từ DN:</label>
+        <label for="fieldname2_1"
+          >Kíchh thước Ø (phi) được quy đổi từ DN:</label
+        >
         <div class="dfield">
           <input
             aria-label="Số Ø được quy đổi từ DN:"
@@ -167,6 +178,12 @@
           const fahrenheit = parseFloat(selectField.value);
           let result;
           switch (fahrenheit) {
+            case 08:
+              result = 13;
+              break;
+            case 10:
+              result = 17;
+              break;
             case 15:
               result = 21;
               break;
@@ -184,6 +201,45 @@
               break;
             case 50:
               result = 60;
+              break;
+            case 65:
+              result = 73;
+              break;
+            case 80:
+              result = 89;
+              break;
+            case 100:
+              result = 114;
+              break;
+            case 125:
+              result = 141;
+              break;
+            case 150:
+              result = 168;
+              break;
+            case 200:
+              result = 219;
+              break;
+            case 250:
+              result = 273;
+              break;
+            case 300:
+              result = 324;
+              break;
+            case 350:
+              result = 356;
+              break;
+            case 400:
+              result = 406;
+              break;
+            case 450:
+              result = 457;
+              break;
+            case 500:
+              result = 508;
+              break;
+            case 600:
+              result = 558;
               break;
           }
           outputField.value = result.toFixed(0) + " mm";
